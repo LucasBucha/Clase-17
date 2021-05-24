@@ -1,59 +1,62 @@
-var inputA = document.getElementById("inputA")
-var inputB = document.getElementById("inputB")
-var inputR = document.getElementById("inputR")
-//var borrar = document.getElementById("borrar")
-//var div = document.getElementById("div")
-var sum = document.getElementById("sum")
-var sub = document.getElementById("sub")
-//var mul = document.getElementById("mul")
-//var igual = document.getElementById("igual")
-//var uno = document.getElementById(1)
-//var dos = document.getElementById(2)
-//var tres = document.getElementById(3)
-//var cuatro = document.getElementById(4)
-//var cinco = document.getElementById(5)
-//var seis = document.getElementById(6)
-//var siete = document.getElementById(7)
-//var ocho = document.getElementById(8)
-//var nueve = document.getElementById(9)
-//var cero = document.getElementById(0)
+var inputA = document.getElementById('inputA');
+var test = '';
+var simbolo = '';
+var resultado = false;
 
-
-function calculadora(action)
+function concatenar(value)
 {
-	if (action == "borrar") {
-		calcInputR.value = "";
-		calcInputA.value = "";
-		calcInputB.value = "";
-
-		return;
+	if (resultado) {
+		reset()
 	}
 
-//	if (isNaN(calcInputA.value) || isNaN(calcInputB.value)) {
-		// Muestro mje
-//		return;
-//	}
+	inputA.value = inputA.value + value;
+}
 
-switch (calculadora) {
-		case "sum":action
-			calcInputR.value = Number(calcInputA.value) + Number(calcInputB.value);
-			break;
+function ejecutarOperacion()
+{
+	switch (simbolo) {
+		case 'mas':
+			return Number(test) + Number(inputA.value);
 
-		case "sub":
-			calcInputR.value = Number(calcInputA.value) - Number(calcInputB.value);
-			break;
+		case 'menos':
+			return Number(test) - Number(inputA.value);
 
-		case "mul":
-			calcInputR.value = Number(calcInputA.value) * Number(calcInputB.value);
-			break;
+		case 'mul':
+			return Number(test) * Number(inputA.value);
 
-		case "div":
-			if (Number(calcInputB.value) != 0) {
-				calcInputR.value = Number(calcInputA.value) / Number(calcInputB.value);
-			}
-			else {
-				calcInputR.value = "";
-			}
+		case 'div':
+			return Number(test) / Number(inputA.value);
 
-			break;
+	}
+
+	return 0;
+}
+
+function operation(signo)
+{
+	if (simbolo) {
+		test = ejecutarOperacion();
+	}
+	else {
+		test = inputA.value;
+	}
+
+	simbolo = signo
+	inputA.value = ''
+	resultado = false;
+}
+
+function igual()
+{
+	inputA.value = ejecutarOperacion();
+	resultado = true;
+	simbolo = "";
+}
+
+function reset()
+{
+	inputA.value = ''
+	test = ''
+	simbolo = ''
+	resultado = false
 }

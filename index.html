@@ -14,71 +14,66 @@
 				<table class="calculadora table table-striped table-dark">
 					<thead>
 						<tr>
-							<th colspan="2"> <input type="text" id="calcInputA" onclick ></th>
-							<th colspan="2"> <input type="text" id="calcInputB" onclick ></th>
-						</tr>
-						<tr>
-							<th colspan="4"> <input type="text" readonly id="calcInputR"> </th>
-							
+							<th colspan="4"> <input type="text" id="inputA" onclick ></th>
 						</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<td>
-							<button id="siete" type="button" onclick class="btn btn-dark">7</button>
-						</td>
-						<td>
-							<button id="ocho" type="button" onclick class="btn btn-dark">8</button>
-						</td>
-						<td>
-							<button id="nueve" type="button" onclick class="btn btn-dark">9</button>
-						</td>
-						<td>
-							<button id="div" onclick type="button" class="btn btn-dark">/</button>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<button id="cuatro" type="button" onclick class="btn btn-dark">4</button>
-						</td>
-						<td>
-							<button id="cinco" type="button" onclick class="btn btn-dark">5</button>
-						</td>
-						<td>
-							<button id="seis" type="button" onclick class="btn btn-dark">6</button>
-						</td>
-						<td>
-							<button id="mul"onclick type="button" class="btn btn-dark">*</button>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<button id="uno" type="button" onclick class="btn btn-dark">1</button>
-						</td>
-						<td>
-							<button id="dos" type="button" onclick class="btn btn-dark">2</button>
-						</td>
-						<td>
-							<button id="tres" type="button" onclick class="btn btn-dark">3</button>
-						</td>
-						<td>
-							<button id= "sub" onclick type="button" class="btn btn-dark">-</button>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<button id="igual" type="button" onclick class="btn btn-dark">=</button>
-						</td>
-						<td>
-							<button id="borrar" type="button" onclick="calculadora('borrar')" class="btn btn-dark">C</button>
-						</td>
-						<td>
-							<button id="cero" type="button" onclick class="btn btn-dark">0</button>
-						</td>
-						<td>
-							<button id="sum" onclick="calculadora('sum')" type="button" class="btn btn-dark">+</button>
-						</td>
-					</tr>
+						<tr>
+							<td>
+								<button type="button" onclick="concatenar(7)" class="btn btn-dark">7</button>
+							</td>
+							<td>
+								<button type="button" onclick="concatenar(8)" class="btn btn-dark">8</button>
+							</td>
+							<td>
+								<button type="button" onclick="concatenar(9)" class="btn btn-dark">9</button>
+							</td>
+							<td>
+								<button onclick="operation('div')" type="button" class="btn btn-dark">/</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="button" onclick="concatenar(4)" class="btn btn-dark">4</button>
+							</td>
+							<td>
+								<button type="button" onclick="concatenar(5)" class="btn btn-dark">5</button>
+							</td>
+							<td>
+								<button type="button" onclick="concatenar(6)" class="btn btn-dark">6</button>
+							</td>
+							<td>
+								<button onclick="operation('mul')" type="button" class="btn btn-dark">*</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="button" onclick="concatenar(1)" class="btn btn-dark">1</button>
+							</td>
+							<td>
+								<button type="button" onclick="concatenar(2)" class="btn btn-dark">2</button>
+							</td>
+							<td>
+								<button type="button" onclick="concatenar(3)" class="btn btn-dark">3</button>
+							</td>
+							<td>
+								<button onclick="operation('mas')" type="button" class="btn btn-dark">-</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="button" onclick="igual()" class="btn btn-dark">=</button>
+							</td>
+							<td>
+								<button type="button" onclick="reset()" class="btn btn-dark">C</button>
+							</td>
+							<td>
+								<button type="button" onclick="concatenar(0)" class="btn btn-dark">0</button>
+							</td>
+							<td>
+								<button onclick="operation('mas')" type="button" class="btn btn-dark">+</button>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
